@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -56,8 +57,14 @@ class MainActivity : ComponentActivity() {
                         )
                         Spacer(modifier = Modifier.height(20.dp))
                         Text(text = "Total amount is : $totalWaterAmount")
-                        Button(onClick = { usedAmount += 200 }) {
-                            Text(text = "Drink")
+                        Row {
+                            Button(onClick = { usedAmount += 200 }) {
+                                Text(text = "Drink")
+                            }
+                            Spacer(modifier = Modifier.width(20.dp))
+                            Button(onClick = { usedAmount = 0 }) {
+                                Text(text = "Reset")
+                            }
                         }
                     }
                 }
